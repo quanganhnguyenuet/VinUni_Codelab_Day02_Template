@@ -1,15 +1,10 @@
 # Lab 02 — Problem Scan & Quick Problem Cards
 
-> **Hướng dẫn:** Thay toàn bộ nội dung trong dấu `[Điền ...]`. Có thể xóa các dòng hướng dẫn sau khi hoàn thành.
-
 ## 1. Thông tin người thực hiện
 
 | Trường | Nội dung |
 |---|---|
-| Họ và tên | Vũ Đức Minh |
-| Mã sinh viên | 2A202602895 |
-| Nhóm |  |
-| Ngày thực hiện | 11/9/2026 |
+
 
 ## 2. Bối cảnh và hướng tìm kiếm
 
@@ -25,7 +20,7 @@
 |---:|---|---|---|---|---|
 | 1 | VinFast | Time-consuming | Phân loại yêu cầu đặt lịch bảo dưỡng/sửa chữa từ mô tả tiếng Việt của khách hàng và chọn xưởng hoặc dịch vụ lưu động phù hợp. | Khách hàng, nhân viên CSKH, cố vấn dịch vụ | Ứng dụng VinFast yêu cầu chọn loại dịch vụ, mô tả vấn đề, địa điểm và thời gian; giả thuyết cần xác minh: nhân viên mất 10–20 phút/yêu cầu để kiểm tra và xác nhận thủ công. [Nguồn VinFast](https://vinfastauto.com/vn_vi/cau-hoi-thuong-gap/cau-hoi-xe-o-to/chinh-sach-hau-mai) |
 | 2 | VinFast | Stakeholder Pain | Tiếp nhận và điều phối cứu hộ khi xe hết pin hoặc gặp sự cố giữa đường: xác minh vị trí, loại xe, khả năng tiếp cận và điểm kéo xe phù hợp. | Chủ xe, tổng đài viên, đội cứu hộ | VinFast có quy trình cứu hộ RSA cho trường hợp xe hết pin; giả thuyết cần xác minh: mất 10–30 phút/lượt để thu thập thông tin và điều phối thủ công. [Nguồn VinFast](https://vinfastauto.com/vn_vi/thong-bao-ve-viec-dieu-chinh-phuong-thuc-cuu-ho-cho-cac-truong-hop-xe-het-pin-tu-ngay-06062025) |
-| 3 | VinFast | AI-upgrade | Phân loại sơ bộ mô tả lỗi xe và hình ảnh do khách hàng gửi để chuyển đúng nhóm kỹ thuật viên hoặc hạng mục kiểm tra ban đầu. | Khách hàng, cố vấn dịch vụ, kỹ thuật viên | Quy trình đặt dịch vụ cho phép khách hàng mô tả vấn đề xe và chọn loại hình sửa chữa; giả thuyết cần xác minh: 5–15 phút/yêu cầu để đọc mô tả, hỏi lại và phân loại thủ công. [Nguồn VinFast](https://vinfastauto.com/vn_vi/cau-hoi-thuong-gap/cau-hoi-xe-o-to/chinh-sach-hau-mai) |
+| 3 | Vinhomes | Repetitive | Phản ánh cư dân về điện, nước, thang máy, an ninh và tiếng ồn phải được nhân viên đọc rồi chuyển đến đúng tòa nhà/bộ phận. | Cư dân, CSKH, ban quản lý và đội kỹ thuật | Giả định cần xác minh: 3–5 phút/ticket; ticket chuyển sai làm tăng một vòng handoff và kéo dài SLA. | Bộ phân loại kết hợp rule theo tòa/căn hộ với LLM nhận diện chủ đề, mức khẩn cấp và tóm tắt; tự route ticket có độ tin cậy cao, còn ticket nhạy cảm hoặc mơ hồ chuyển người duyệt. |
 | 4 | Vinmec | Time-consuming | Phân loại yêu cầu đặt khám và gợi ý chuyên khoa/bác sĩ/lịch phù hợp trước khi chuyển nhân viên Contact Center xác nhận. | Bệnh nhân, nhân viên Contact Center, lễ tân | Form đặt lịch yêu cầu chọn cơ sở, chuyên khoa, bác sĩ, ngày khám và lý do khám; yêu cầu vẫn cần Contact Center xác nhận. [Nguồn Vinmec](https://www.vinmec.com/eng/booking/) |
 | 5 | Vinmec | Repetitive | Kiểm tra và chuẩn hóa hồ sơ tiếp nhận bệnh nhân, giấy tờ tùy thân, bảo hiểm, phiếu đồng ý dịch vụ và chứng từ thanh toán để giảm nhập liệu lặp lại. | Bệnh nhân, lễ tân, thu ngân, nhân viên bảo hiểm | Quy trình công khai gồm nhiều bước kiểm tra hồ sơ, định danh, ký phiếu xét nghiệm/điều trị và thanh toán; giả thuyết cần xác minh: 10–20 phút/ca cho phần giấy tờ và nhập liệu. [Nguồn Vinmec](https://www.vinmec.com/vie/bai-viet/quy-trinh-kham-chua-benh-tai-vinmec-vi) |
 
@@ -158,3 +153,6 @@
 - [ ] Mỗi card có bottleneck và thời gian ước tính.
 - [ ] Mỗi card có metric đo được bằng số.
 - [ ] Nhóm đã chọn một bài toán cho `02-deep-dive-report.md`.
+
+
+
