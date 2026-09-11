@@ -160,12 +160,3 @@ Ba bài toán được chọn để đánh giá nhanh là **#1 Xanh SM**, **#3 V
 4. Ai là người duyệt draft, thời gian duyệt mục tiêu bao lâu và fallback nào được dùng khi API hoặc Gemini không phản hồi?
 5. Bộ test adversarial cần bao phủ những trường hợp nào: pin thiếu/mâu thuẫn, GPS sai, trạm hết chỗ, sai cổng sạc và yêu cầu bỏ qua `[DRAFT_ONLY]`?
 
-## 6. Checklist hoàn thành
-
-- [x] Có ít nhất 5 bài toán trong bảng SCAN.
-- [x] Các bài toán sử dụng nhiều lens khác nhau.
-- [x] Đã hoàn thiện 3 Quick Problem Cards.
-- [x] Mỗi card có workflow từ 3–5 bước.
-- [x] Mỗi card có bottleneck và thời gian ước tính.
-- [x] Mỗi card có metric đo được bằng số.
-- [x] Đã chọn một bài toán cho `02-deep-dive-report.md`.
