@@ -4,8 +4,8 @@
 
 | Trường | Nội dung |
 |---|---|
-| Họ và tên | Nguyễn Vũ Quang Anh |
-| Mã học viên | 2A202602805 |
+| Họ và tên | |
+| Mã học viên | |
 | Nhóm | Chưa cập nhật |
 
 ## 2. Bối cảnh và yêu cầu bài tập
