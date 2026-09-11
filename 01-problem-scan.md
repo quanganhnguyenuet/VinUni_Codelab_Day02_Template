@@ -1,15 +1,10 @@
 # Lab 02 — Problem Scan & Quick Problem Cards
 
-> **Hướng dẫn:** Thay toàn bộ nội dung trong dấu `[Điền ...]`. Có thể xóa các dòng hướng dẫn sau khi hoàn thành.
-
 ## 1. Thông tin người thực hiện
 
 | Trường | Nội dung |
 |---|---|
-| Họ và tên | Đỗ Đức Đại |
-| Mã sinh viên | 2A202602725 |
-| Nhóm | [Điền tên/số nhóm] |
-| Ngày thực hiện | 11/9/2026 |
+
 
 ## 2. Bối cảnh và hướng tìm kiếm
 
@@ -21,15 +16,13 @@
 
 > Liệt kê **ít nhất 5 bài toán/bottleneck thực tế**. Mỗi bài toán nên gắn với một lens cụ thể và mô tả được quy trình đang gây lãng phí.
 
-| # | Subsidiary | Lens | Mô tả ngắn bài toán |
-|---|------------|------|---------------------|
-| 1 | VinFast | Tốn thời gian | Kỹ sư mất nhiều thời gian gom và đối chiếu dữ liệu từ MES/PLC để phân tích nguyên nhân gốc rễ (RCA) mỗi khi lỗi tăng. |
-| 2 | Xanh SM | Lặp lại | Nhân viên CSKH đọc và phân loại thủ công hàng ngàn ticket khiếu nại hằng ngày để gán cho đúng phòng ban. |
-| 3 | VinFast | Pain từ người khác | Kỹ thuật viên bảo trì tra cứu thủ công tài liệu SOP dài hàng ngàn trang mỗi khi máy móc báo lỗi, làm tăng downtime. |
-| 4 | Xanh SM | AI có thể tốt hơn | Tài xế sạc theo cảm tính khiến trạm trung tâm xếp hàng dài, trạm vùng ven bỏ trống, lãng phí thời gian kinh doanh. |
-| 5 | VinFast | Lặp lại | QC phải quan sát thủ công bề mặt xe để tìm lỗi ngoại quan lặp đi lặp lại hàng ngàn xe, dễ sai sót do mệt mỏi. |
-### 📝 List bài toán của tôi:
-
+| # | Công ty thành viên | Lens | Quy trình/bài toán | Ai bị ảnh hưởng? | Bằng chứng hoặc ước tính ban đầu |
+|---:|---|---|---|---|---|
+| 1 | VinFast | Time-consuming | Phân loại yêu cầu đặt lịch bảo dưỡng/sửa chữa từ mô tả tiếng Việt của khách hàng và chọn xưởng hoặc dịch vụ lưu động phù hợp. | Khách hàng, nhân viên CSKH, cố vấn dịch vụ | Ứng dụng VinFast yêu cầu chọn loại dịch vụ, mô tả vấn đề, địa điểm và thời gian; giả thuyết cần xác minh: nhân viên mất 10–20 phút/yêu cầu để kiểm tra và xác nhận thủ công. [Nguồn VinFast](https://vinfastauto.com/vn_vi/cau-hoi-thuong-gap/cau-hoi-xe-o-to/chinh-sach-hau-mai) |
+| 2 | VinFast | Stakeholder Pain | Tiếp nhận và điều phối cứu hộ khi xe hết pin hoặc gặp sự cố giữa đường: xác minh vị trí, loại xe, khả năng tiếp cận và điểm kéo xe phù hợp. | Chủ xe, tổng đài viên, đội cứu hộ | VinFast có quy trình cứu hộ RSA cho trường hợp xe hết pin; giả thuyết cần xác minh: mất 10–30 phút/lượt để thu thập thông tin và điều phối thủ công. [Nguồn VinFast](https://vinfastauto.com/vn_vi/thong-bao-ve-viec-dieu-chinh-phuong-thuc-cuu-ho-cho-cac-truong-hop-xe-het-pin-tu-ngay-06062025) |
+| 3 | Vinhomes | Repetitive | Phản ánh cư dân về điện, nước, thang máy, an ninh và tiếng ồn phải được nhân viên đọc rồi chuyển đến đúng tòa nhà/bộ phận. | Cư dân, CSKH, ban quản lý và đội kỹ thuật | Giả định cần xác minh: 3–5 phút/ticket; ticket chuyển sai làm tăng một vòng handoff và kéo dài SLA. | Bộ phân loại kết hợp rule theo tòa/căn hộ với LLM nhận diện chủ đề, mức khẩn cấp và tóm tắt; tự route ticket có độ tin cậy cao, còn ticket nhạy cảm hoặc mơ hồ chuyển người duyệt. |
+| 4 | Vinmec | Time-consuming | Phân loại yêu cầu đặt khám và gợi ý chuyên khoa/bác sĩ/lịch phù hợp trước khi chuyển nhân viên Contact Center xác nhận. | Bệnh nhân, nhân viên Contact Center, lễ tân | Form đặt lịch yêu cầu chọn cơ sở, chuyên khoa, bác sĩ, ngày khám và lý do khám; yêu cầu vẫn cần Contact Center xác nhận. [Nguồn Vinmec](https://www.vinmec.com/eng/booking/) |
+| 5 | Vinmec | Repetitive | Kiểm tra và chuẩn hóa hồ sơ tiếp nhận bệnh nhân, giấy tờ tùy thân, bảo hiểm, phiếu đồng ý dịch vụ và chứng từ thanh toán để giảm nhập liệu lặp lại. | Bệnh nhân, lễ tân, thu ngân, nhân viên bảo hiểm | Quy trình công khai gồm nhiều bước kiểm tra hồ sơ, định danh, ký phiếu xét nghiệm/điều trị và thanh toán; giả thuyết cần xác minh: 10–20 phút/ca cho phần giấy tờ và nhập liệu. [Nguồn Vinmec](https://www.vinmec.com/vie/bai-viet/quy-trinh-kham-chua-benh-tai-vinmec-vi) |
 
 ### Ghi chú về 4 lenses
 
@@ -42,167 +35,93 @@
 
 ### Quick Problem Card #1
 
-**Tên bài toán:** [Điền tên ngắn gọn]
+**Tên bài toán:** Phân loại yêu cầu đặt lịch bảo dưỡng/sửa chữa
 
-**Bài toán trong một câu:** [Ai gặp vấn đề gì, trong hoàn cảnh nào?]
+**Bài toán trong một câu:** Khách hàng mô tả lỗi xe bằng tiếng Việt, nhưng nhân viên phải đọc, hỏi lại và phân loại thủ công để chọn đúng dịch vụ, xưởng hoặc lịch hẹn.
 
-**Công ty thành viên:** [VinFast / Xanh SM / Vinhomes / Vinmec / Vinpearl / VinUni / Khác]
+**Công ty thành viên:** VinFast
 
-**Lens:** [Repetitive / Time-consuming / AI-upgrade / Stakeholder Pain]
+**Lens:** Time-consuming
 
-**Ai đang đau (Actor/Stakeholder):** [Điền]
+**Ai đang đau (Actor/Stakeholder):** Khách hàng, nhân viên Contact Center, cố vấn dịch vụ.
 
 **Workflow thủ công hiện tại:**
 
-1. [Bước 1 — ai thực hiện, dùng công cụ gì?]
-2. [Bước 2]
-3. [Bước 3]
-4. [Bước 4 nếu có]
-5. [Bước 5 nếu có]
+1. Khách hàng gửi yêu cầu qua ứng dụng hoặc gọi tổng đài.
+2. Nhân viên đọc mô tả lỗi và hỏi thêm thông tin.
+3. Nhân viên phân loại loại dịch vụ cần thực hiện.
+4. Nhân viên kiểm tra xưởng/dịch vụ lưu động và thời gian phù hợp.
+5. Nhân viên xác nhận lịch với khách hàng.
 
-**Bước tốn thời gian hoặc dễ lỗi nhất:** [Điền bước] — khoảng [Điền số] phút/lượt.
+**Bước tốn thời gian hoặc dễ lỗi nhất:** Bước 2–4 — khoảng 10–20 phút/yêu cầu, là ước tính cần kiểm chứng.
 
-**AI có thể hỗ trợ ở bước:** [Điền bước và mô tả AI làm gì]
+**AI có thể hỗ trợ ở bước:** Bước 2–3: trích xuất triệu chứng, phân loại sơ bộ loại dịch vụ và đề xuất xưởng phù hợp. Nhân viên vẫn phải kiểm tra và xác nhận.
 
-**Success metric có số:** [Ví dụ: giảm từ X phút xuống dưới Y phút; độ chính xác đạt Z%]
+**Success metric có số:** Giảm thời gian phân loại ban đầu từ 10–20 phút xuống dưới 5 phút/yêu cầu; tỷ lệ chuyển đúng nhóm dịch vụ đạt tối thiểu 90%.
 
-**Quick Architecture:** [ ] No AI  &nbsp;&nbsp; [ ] Rule  &nbsp;&nbsp; [ ] LLM Feature  &nbsp;&nbsp; [ ] Agent
+**Quick Architecture:** [ ] No AI  &nbsp;&nbsp; [ ] Rule  &nbsp;&nbsp; [x] LLM Feature  &nbsp;&nbsp; [ ] Agent
 
-**Rủi ro hoặc điều cần kiểm chứng:** [Điền]
+**Rủi ro hoặc điều cần kiểm chứng:** AI không được tự chẩn đoán lỗi nghiêm trọng hoặc tự xác nhận lịch; cần kiểm tra độ chính xác với các mô tả lỗi thực tế. Quy trình đặt dịch vụ công khai của VinFast gồm chọn loại dịch vụ, mô tả vấn đề, địa điểm và thời gian. [Nguồn VinFast](https://vinfastauto.com/vn_vi/cau-hoi-thuong-gap/cau-hoi-xe-o-to/chinh-sach-hau-mai)
 
 ### Quick Problem Card #2
 
-**Tên bài toán:** [Điền tên ngắn gọn]
+**Tên bài toán:** Điều phối cứu hộ RSA khi xe hết pin
 
-**Bài toán trong một câu:** [Ai gặp vấn đề gì, trong hoàn cảnh nào?]
+**Bài toán trong một câu:** Khi xe hết pin hoặc gặp sự cố giữa đường, nhân viên phải thu thập thông tin, xác minh vị trí và điều phối xe kéo thủ công, khiến khách hàng phải chờ lâu.
 
-**Công ty thành viên:** [VinFast / Xanh SM / Vinhomes / Vinmec / Vinpearl / VinUni / Khác]
+**Công ty thành viên:** VinFast
 
-**Lens:** [Repetitive / Time-consuming / AI-upgrade / Stakeholder Pain]
+**Lens:** Stakeholder Pain
 
-**Ai đang đau (Actor/Stakeholder):** [Điền]
+**Ai đang đau (Actor/Stakeholder):** Chủ xe, nhân viên tổng đài, đội cứu hộ.
 
 **Workflow thủ công hiện tại:**
 
-1. [Bước 1 — ai thực hiện, dùng công cụ gì?]
-2. [Bước 2]
-3. [Bước 3]
-4. [Bước 4 nếu có]
-5. [Bước 5 nếu có]
+1. Khách hàng gọi tổng đài và báo xe gặp sự cố.
+2. Nhân viên xác minh biển số, vị trí, mức pin và tình trạng xe.
+3. Nhân viên kiểm tra điều kiện tiếp cận và điểm cứu hộ phù hợp.
+4. Nhân viên điều phối xe kéo RSA.
+5. Nhân viên thông báo hướng dẫn và thời gian dự kiến cho khách hàng.
 
-**Bước tốn thời gian hoặc dễ lỗi nhất:** [Điền bước] — khoảng [Điền số] phút/lượt.
+**Bước tốn thời gian hoặc dễ lỗi nhất:** Bước 2–4 — khoảng 10–30 phút/lượt, là ước tính cần kiểm chứng.
 
-**AI có thể hỗ trợ ở bước:** [Điền bước và mô tả AI làm gì]
+**AI có thể hỗ trợ ở bước:** Bước 2–3: chuyển nội dung cuộc gọi thành dữ liệu có cấu trúc, kiểm tra thông tin còn thiếu và đề xuất phương án điều phối. Nhân viên phải phê duyệt trước khi điều xe.
 
-**Success metric có số:** [Ví dụ: giảm từ X phút xuống dưới Y phút; độ chính xác đạt Z%]
+**Success metric có số:** Giảm thời gian tiếp nhận và điều phối từ 20 phút xuống dưới 8 phút/lượt; tỷ lệ hồ sơ có đủ thông tin ngay lần đầu đạt 95%.
 
-**Quick Architecture:** [ ] No AI  &nbsp;&nbsp; [ ] Rule  &nbsp;&nbsp; [ ] LLM Feature  &nbsp;&nbsp; [ ] Agent
+**Quick Architecture:** [ ] No AI  &nbsp;&nbsp; [x] Rule  &nbsp;&nbsp; [x] LLM Feature  &nbsp;&nbsp; [ ] Agent
 
-**Rủi ro hoặc điều cần kiểm chứng:** [Điền]
+**Rủi ro hoặc điều cần kiểm chứng:** AI không được tự động điều xe, không được đưa ra hướng dẫn thiếu an toàn và phải xác minh vị trí/điều kiện giao thông. VinFast đã công bố sử dụng cứu hộ bằng xe kéo RSA cho trường hợp xe hết pin từ ngày 06/06/2025. [Nguồn VinFast](https://vinfastauto.com/vn_vi/thong-bao-ve-viec-dieu-chinh-phuong-thuc-cuu-ho-cho-cac-truong-hop-xe-het-pin-tu-ngay-06062025)
 
 ### Quick Problem Card #3
 
-**Tên bài toán:** [Điền tên ngắn gọn]
+**Tên bài toán:** Gợi ý chuyên khoa và lịch khám phù hợp
 
-**Bài toán trong một câu:** [Ai gặp vấn đề gì, trong hoàn cảnh nào?]
+**Bài toán trong một câu:** Bệnh nhân mô tả lý do khám chưa rõ ràng, khiến nhân viên phải đọc, hỏi lại và xác định chuyên khoa/bác sĩ trước khi xác nhận lịch.
 
-**Công ty thành viên:** [VinFast / Xanh SM / Vinhomes / Vinmec / Vinpearl / VinUni / Khác]
+**Công ty thành viên:** Vinmec
 
-**Lens:** [Repetitive / Time-consuming / AI-upgrade / Stakeholder Pain]
+**Lens:** Time-consuming
 
-**Ai đang đau (Actor/Stakeholder):** [Điền]
+**Ai đang đau (Actor/Stakeholder):** Bệnh nhân, nhân viên Contact Center, lễ tân.
 
 **Workflow thủ công hiện tại:**
 
-1. [Bước 1 — ai thực hiện, dùng công cụ gì?]
-2. [Bước 2]
-3. [Bước 3]
-4. [Bước 4 nếu có]
-5. [Bước 5 nếu có]
+1. Bệnh nhân gửi yêu cầu đặt lịch và mô tả lý do khám.
+2. Nhân viên đọc nội dung và gọi lại nếu thông tin chưa đầy đủ.
+3. Nhân viên xác định chuyên khoa hoặc bác sĩ phù hợp.
+4. Nhân viên kiểm tra ngày giờ còn trống.
+5. Nhân viên gọi lại để xác nhận lịch khám.
 
-**Bước tốn thời gian hoặc dễ lỗi nhất:** [Điền bước] — khoảng [Điền số] phút/lượt.
+**Bước tốn thời gian hoặc dễ lỗi nhất:** Bước 2–4 — khoảng 10–15 phút/yêu cầu, là ước tính cần kiểm chứng.
 
-**AI có thể hỗ trợ ở bước:** [Điền bước và mô tả AI làm gì]
+**AI có thể hỗ trợ ở bước:** Bước 2–3: tóm tắt lý do khám, gợi ý chuyên khoa và tạo danh sách câu hỏi cần hỏi thêm. Nhân viên Contact Center chịu trách nhiệm xác nhận cuối cùng.
 
-**Success metric có số:** [Ví dụ: giảm từ X phút xuống dưới Y phút; độ chính xác đạt Z%]
+**Success metric có số:** Giảm thời gian xử lý yêu cầu từ 10–15 phút xuống dưới 4 phút/yêu cầu; tỷ lệ gợi ý đúng chuyên khoa đạt tối thiểu 90%.
 
-**Quick Architecture:** [ ] No AI  &nbsp;&nbsp; [ ] Rule  &nbsp;&nbsp; [ ] LLM Feature  &nbsp;&nbsp; [ ] Agent
+**Quick Architecture:** [ ] No AI  &nbsp;&nbsp; [x] Rule  &nbsp;&nbsp; [x] LLM Feature  &nbsp;&nbsp; [ ] Agent
 
-**Rủi ro hoặc điều cần kiểm chứng:** [Điền]
-┌─────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #1                                       │
-│                                                             │
-│ Bài toán: Kỹ thuật viên bảo trì tra cứu thủ công tài liệu   │
-│ SOP và lịch sử sửa chữa mỗi khi máy móc báo lỗi, tăng downtime│
-│ Công ty thành viên: [x] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
-│                     [ ] Vinmec   [ ] Khác (Ghi rõ)________  │
-│                                                             │
-│ Ai đang đau (Actor)? Kỹ thuật viên (Technician) tại xưởng   │
-│                                                             │
-│ Workflow thủ công hiện tại (4 bước):                        │
-│   1. Máy báo mã lỗi ──> 2. Kỹ thuật viên tìm/đọc tài liệu   │
-│   SOP thủ công ──> 3. Kiểm tra lịch sử ──> 4. Sửa chữa      │
-│                                                             │
-│ Bước nào tốn thời gian/lỗi nhất? Bước 2 & 3 (⏱ 15+ phút)    │
-│ AI có thể nhảy vào hỗ trợ ở bước nào? Bước 2 & 3 (GenAI đọc │
-│ mã lỗi, trích xuất nguyên nhân & cách xử lý từ SOP)         │
-│                                                             │
-│ Đo thành công bằng gì (Metric có số)?                       │
-│ Giảm thời gian tra cứu từ 15 phút ──> dưới 2 phút (giảm 20% │
-│ thời gian sửa chữa - MTTR).                                 │
-│                                                             │
-│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent │
-└─────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #2                                       │
-│                                                             │
-│ Bài toán: Kỹ sư mất nhiều công sức kéo và đối chiếu dữ liệu │
-│ từ nhiều hệ thống để tìm nguyên nhân gốc rễ (RCA) của lỗi.  │
-│ Công ty thành viên: [x] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
-│                     [ ] Vinmec   [ ] Khác (Ghi rõ)________  │
-│                                                             │
-│ Ai đang đau (Actor)? Kỹ sư Chất lượng / Kỹ sư Sản xuất      │
-│                                                             │
-│ Workflow thủ công hiện tại (5 bước):                        │
-│   1. Phát hiện lỗi ──> 2. Kéo data từ MES/PLC/QMS ──> 3. Vẽ │
-│   biểu đồ/so sánh chéo ──> 4. Đặt giả thuyết ──> 5. Test    │
-│                                                             │
-│ Bước nào tốn thời gian/lỗi nhất? Bước 2 & 3 (⏱ Vài giờ-ngày)│
-│ AI có thể nhảy vào hỗ trợ ở bước nào? Bước 2 & 3 & 4 (Agent │
-│ tự động gom dữ liệu, tìm correlation & rank các root causes)│
-│                                                             │
-│ Đo thành công bằng gì (Metric có số)?                       │
-│ Giảm 90% thời gian tìm RCA, tiết kiệm 3-10 tỷ VNĐ/năm/line. │
-│                                                             │
-│ Quick Architecture: [ ] No AI  [ ] Rule  [ ] LLM  [x] Agent │
-└─────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #3                                       │
-│                                                             │
-│ Bài toán: Nhân viên CSKH phân loại thủ công hàng ngàn phản  │
-│ hồi/ticket khiếu nại của khách hàng mỗi ngày.               │
-│ Công ty thành viên: [ ] VinFast  [x] Xanh SM  [ ] Vinhomes  │
-│                     [ ] Vinmec   [ ] Khác (Ghi rõ)________  │
-│                                                             │
-│ Ai đang đau (Actor)? Nhân viên CSKH (Customer Service)      │
-│                                                             │
-│ Workflow thủ công hiện tại (4 bước):                        │
-│   1. Nhận ticket ──> 2. Đọc & hiểu nội dung ──> 3. Xác định │
-│   loại lỗi & mức độ ──> 4. Gắn thẻ và chuyển bộ phận xử lý  │
-│                                                             │
-│ Bước nào tốn thời gian/lỗi nhất? Bước 2 & 3 (⏱ 2-3 phút/vé) │
-│ AI có thể nhảy vào hỗ trợ ở bước nào? Bước 2 & 3 (LLM đọc   │
-│ nội dung, tự gán nhãn loại lỗi và định tuyến ticket)        │
-│                                                             │
-│ Đo thành công bằng gì (Metric có số)?                       │
-│ 100% ticket được phân loại trong < 5 giây. Giảm TAT, giảm   │
-│ 10% tỷ lệ rời bỏ khách hàng (churn rate).                   │
-│                                                             │
-│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent │
-└─────────────────────────────────────────────────────────────┘
-
+**Rủi ro hoặc điều cần kiểm chứng:** AI chỉ hỗ trợ phân loại hành chính, không được chẩn đoán bệnh, tư vấn điều trị hoặc tự đặt lịch. Form đặt lịch Vinmec yêu cầu cơ sở, chuyên khoa, bác sĩ, ngày khám và lý do khám; Contact Center vẫn xác nhận lịch cuối cùng. [Nguồn Vinmec](https://www.vinmec.com/eng/booking/)
 
 ## 5. Lựa chọn bài toán cho Deep Dive
 
@@ -234,3 +153,6 @@
 - [ ] Mỗi card có bottleneck và thời gian ước tính.
 - [ ] Mỗi card có metric đo được bằng số.
 - [ ] Nhóm đã chọn một bài toán cho `02-deep-dive-report.md`.
+
+
+
